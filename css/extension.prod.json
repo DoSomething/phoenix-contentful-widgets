@@ -1,6 +1,6 @@
 {
   "id": "css-extension",
   "name": "CSS Editor",
-  "srcdoc": "./_build/index.html",
+  "srcdoc": "https://dosomething.github.io/phoenix-contentful-widgets/css-wdiget.html",
   "fieldTypes": ["Text"]
 }
