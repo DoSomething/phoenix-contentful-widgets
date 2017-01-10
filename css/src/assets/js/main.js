@@ -8,22 +8,29 @@ import 'codemirror/lib/codemirror.css';
 import '../scss/main.scss';
 
 // Reference to the extension API
-var contentfulExtension = require('contentful-ui-extensions-sdk');
+const contentfulExtension = window.contentfulExtension;
 
-contentfulExtension.init(extension => {
-    // Resizes the extension iframe whenever the size of the document changes.
-    ext.window.startAutoResizer();
+    // // Configure CodeMirror on specified element
+    // let config = {
+    //     autoCloseBrackets: true,
+    //     lineNumbers: true,
+    //     mode: 'css',
+    //     matchBrackets: true,
+    // };
 
-    // Configure CodeMirror on specified element
-    let config = {
-        autoCloseBrackets: true,
-        lineNumbers: true,
-        mode: 'css',
-        matchBrackets: true,
-    };
-
-    // Initialize CodeMirror on specified element
-    let editor = codeMirror.fromTextArea(document.getElementById('css-editor'), config);
+    // // Initialize CodeMirror on specified element
+    // let editor = codeMirror.fromTextArea(document.getElementById('css-editor'), config);
     // console.log(editor);
 
+contentfulExtension.init(function (extension) {
+    console.log(extension);
+
+    // Resizes the extension iframe whenever the size of the document changes.
+    extension.window.startAutoResizer();
+
+    extension.field.setValue("Hello world!")
+
 });
+
+
+console.log(contentfulExtension);
