@@ -12,14 +12,15 @@
     "build:dev": "webpack",
     "extension:create": "better-npm-run extension:create",
     "extension:update": "better-npm-run extension:update",
-    "export": "cp _build/index.html _build/temp.html && mv _build/temp.html ../docs/css-widget.html"
+    "export": "cp _build/index.html _build/temp.html && mv _build/temp.html ../docs/css-widget.html",
+    "source": "source .env"
   },
   "betterScripts": {
     "extension:create": {
-        "command": "contentful-extension create --space-id $SPACE_ID"
+        "command": "contentful-extension create --space-id $CONTENTFUL_SPACE_ID"
     },
     "extension:update": {
-        "command": "contentful-extension update --space-id $SPACE_ID --force"
+        "command": "contentful-extension update --space-id $CONTENTFUL_SPACE_ID --force"
     }
   },
   "devDependencies": {
@@ -42,7 +43,6 @@
     "webpack-validator": "^2.3.0"
   },
   "dependencies": {
-    "codemirror": "^5.21.0",
-    "contentful-ui-extensions-sdk": "^3.1.0"
+    "codemirror": "^5.21.0"
   }
 }
