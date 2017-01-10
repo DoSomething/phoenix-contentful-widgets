@@ -12,7 +12,7 @@
     "build:dev": "webpack",
     "extension:create": "better-npm-run extension:create",
     "extension:update": "better-npm-run extension:update",
-    "export": "mv _build/index.html ../docs/css-widget.html"
+    "export": "cp _build/index.html _build/temp.html && mv _build/temp.html ../docs/css-widget.html"
   },
   "betterScripts": {
     "extension:create": {
