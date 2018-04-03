@@ -1,0 +1,37 @@
+{
+  "title": "Questions",
+  "type": "array",
+  "items": {
+    "title": "Question",
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "title": "Title"
+      },
+      "choices": {
+        "title": "Choices",
+        "type": "array",
+        "items": {
+          "title": "Choice",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "results": {
+              "type": "array",
+              "format": "table",
+              "title": "Results",
+              "items": {
+                "title": "Result Id",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
