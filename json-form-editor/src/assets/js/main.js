@@ -4,18 +4,6 @@ import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
 
-// Helper Methods:
-const createElement = (element = null, options = {}, parent = document.body) => {
-  const newElement = document.createElement(element);
-
-  Object.keys(options).forEach(prop => (
-    newElement[prop] = options[prop]
-  ));
-
-  parent.appendChild(newElement);
-  return newElement;
-};
-
 // Reference to the extension API
 const contentfulExtension = window.contentfulExtension;
 
@@ -27,7 +15,11 @@ const contentfulExtension = window.contentfulExtension;
 contentfulExtension.init((extension) => {
   extension.window.startAutoResizer();
 
-  const editorElement = createElement('div', { className: 'jfe-editor-root' });
+  const editorElement = document.createElement('div');
+  editorElement.classList.add('jfe-editor-root');
+  document.body.appendChild(editorElement);
+
+  const fieldId = extension.field.id;
 
   const editor = new window.JSONEditor(editorElement, {
     schema: json,
