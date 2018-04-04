@@ -2,6 +2,7 @@
 
 import 'json-editor';
 import json from './schema.json';
+import debounce from 'lodash.debounce';
 // import JSONEditorcontentfulTheme from './json-editor-contentful-theme';
 
 // set a contentful theme on the JSON Editor
@@ -17,22 +18,6 @@ const createElement = (element = null, options = {}, parent = document.body) => 
 
   parent.appendChild(newElement);
   return newElement;
-};
-
-const debounce = (func, wait) => {
-  let timeout;
-  return function (...args) {
-    const context = this;
-    const later = () => {
-      timeout = null;
-      func.apply(context, args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (! timeout) {
-      func.apply(context, args);
-    }
-  };
 };
 
 // Reference to the extension API
