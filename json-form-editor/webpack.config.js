@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const configure = require('@dosomething/webpack-config');
 const resolve = require('path').resolve;
 const webpackValidator = require('webpack-validator');
+const configure = require('@dosomething/webpack-config');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
@@ -18,8 +18,6 @@ module.exports = configure({
   module: {
     loaders: [
       { enforce: 'pre', test: /\.js$/, use: 'eslint-loader', include: resolve('/src/assets') },
-      // { test: /\.css$/, loaders: ['style-loader', 'css-loader'] },
-      // { test: /\.scss$/,  loaders: ['style-loader', 'css-loader', 'sass-loader'] },
     ],
   },
 
