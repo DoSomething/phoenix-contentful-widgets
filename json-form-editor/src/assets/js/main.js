@@ -3,10 +3,6 @@
 import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
-// import JSONEditorcontentfulTheme from './json-editor-contentful-theme';
-
-// set a contentful theme on the JSON Editor
-// window.JSONEditor.defaults.themes.contentful = JSONEditorcontentfulTheme(window.JSONEditor);
 
 // Helper Methods:
 const createElement = (element = null, options = {}, parent = document.body) => {
@@ -34,7 +30,6 @@ contentfulExtension.init((extension) => {
   const editorElement = createElement('div', { className: 'jfe-editor-root' });
 
   const editor = new window.JSONEditor(editorElement, {
-    // theme: 'contentful',
     schema: json,
     no_additional_properties: true,
     required_by_default: true,
