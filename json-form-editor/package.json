@@ -18,10 +18,10 @@
   },
   "betterScripts": {
     "extension:create": {
-        "command": "contentful-extension create --space-id $CONTENTFUL_SPACE_ID"
+      "command": "contentful-extension create --space-id $CONTENTFUL_SPACE_ID"
     },
     "extension:update": {
-        "command": "contentful-extension update --space-id $CONTENTFUL_SPACE_ID --force"
+      "command": "contentful-extension update --space-id $CONTENTFUL_SPACE_ID --force"
     }
   },
   "author": "",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "contentful-ui-extensions-sdk": "^3.3.0",
-    "json-editor": "^0.7.28"
+    "json-editor": "^0.7.28",
+    "lodash.debounce": "^4.0.8"
   }
 }
