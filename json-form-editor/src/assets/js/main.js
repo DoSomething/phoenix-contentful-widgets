@@ -1,12 +1,10 @@
 /* global window, document */
-
 import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
 
 // Reference to the extension API
 const contentfulExtension = window.contentfulExtension;
-
 
 /**
  * Custom JSON form editor widget for Contentful.
