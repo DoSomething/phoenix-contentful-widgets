@@ -3,7 +3,11 @@ import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
+
 window.Handlebars = handlebars;
+window.Handlebars.registerHelper('transformIndex', function(index) {
+  return String.fromCharCode(Number(index) + 65);
+});
 
 // Reference to the extension API
 const contentfulExtension = window.contentfulExtension;

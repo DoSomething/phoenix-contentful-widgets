@@ -2,13 +2,12 @@
   "results": {
     "title": "Results",
     "type": "array",
-    "uniqueItems": true,
     "id": "res",
     "items": {
+      "headerTemplate": "Result ID: {{#transformIndex i}}{{/transformIndex}}",
       "options": {
           "collapsed": true
         },
-      "title": "Result",
       "type": "object",
       "properties": {
         "content": {
@@ -40,7 +39,7 @@
             "collapsed": true
           },
           "items": {
-            "title": "Choice",
+            "headerTemplate": "Choice #{{i1}}",
             "type": "object",
             "properties": {
               "title": {
@@ -51,11 +50,11 @@
                 "type": "array",
                 "format": "table",
                 "title": "Results",
-                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the number of the result!)",
+                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the ID of the result!)",
                 "items": {
-                  "title": "result ID/s",
+                  "title": "result ID",
                   "type": "string",
-                  "format": "number"
+                  "pattern": "[A-Z]"
                 }
               },
               "resultBlock": {
