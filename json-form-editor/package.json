@@ -2,12 +2,15 @@
   "name": "contentful-ui-extension-json-form-editor",
   "version": "0.1.0",
   "description": "A JSON form editor UI Extension widget for Contentful's Web App",
-  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "main": "./src/main.js",
   "scripts": {
-    "build": "webpack",
+    "prebuild": "rimraf _build",
+    "build": "webpack -p && npm run export",
     "extension:create": "better-npm-run extension:create",
     "extension:update": "better-npm-run extension:update",
-    "export": "cp ./_build/index.html ./_build/temp.html && mv _build/temp.html ../docs/json-form-editor.html",
+    "export": "cp ./_build/index.html ./_build/temp.html && mv _build/temp.html ../docs/json-form-editor-widget.html",
     "start": "NODE_ENV=development webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,8 +27,6 @@
       "command": "contentful-extension update --space-id $CONTENTFUL_SPACE_ID --force"
     }
   },
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@dosomething/babel-config": "^2.1.0",
     "@dosomething/eslint-config": "^3.1.2",
