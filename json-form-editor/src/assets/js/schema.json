@@ -3,10 +3,14 @@
     "title": "Results",
     "type": "array",
     "id": "res",
+    "options": {
+      "disable_array_delete_all_rows": true,
+      "disable_array_reorder": true
+    },
     "items": {
       "headerTemplate": "Result ID: {{#transformIndex i}}{{/transformIndex}}",
       "options": {
-          "collapsed": true
+        "collapsed": true
         },
       "type": "object",
       "properties": {
@@ -24,6 +28,9 @@
   "questions": {
     "title": "Questions",
     "type": "array",
+    "options": {
+      "disable_array_delete_all_rows": true
+    },
     "items": {
       "title": "Question",
       "type": "object",
