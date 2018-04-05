@@ -2,6 +2,8 @@
 import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
+import handlebars from 'handlebars';
+window.Handlebars = handlebars;
 
 // Reference to the extension API
 const contentfulExtension = window.contentfulExtension;
@@ -27,6 +29,7 @@ contentfulExtension.init((extension) => {
     startval: extension.field.getValue(),
     disable_properties: true,
     show_errors: 'always',
+    template: 'handlebars',
   });
 
   const validateAndSave = debounce(() => {

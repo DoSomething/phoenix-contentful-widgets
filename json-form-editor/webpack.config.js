@@ -23,6 +23,9 @@ module.exports = configure({
 
   resolve: {
     modules: [resolve('node_modules')],
+    alias: {
+       handlebars: 'handlebars/dist/handlebars.min.js'
+    },
   },
 
   plugins: [

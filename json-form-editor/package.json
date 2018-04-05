@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "contentful-ui-extensions-sdk": "^3.3.0",
+    "handlebars": "^4.0.11",
     "json-editor": "^0.7.28",
     "lodash.debounce": "^4.0.8"
   }
