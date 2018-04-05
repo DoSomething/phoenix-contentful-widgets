@@ -1,0 +1,6 @@
+{
+  "id": "json-form-editor-extension",
+  "name": "JSON Form Editor",
+  "src": "https://dosomething.github.io/phoenix-contentful-widgets/json-form-editor-widget.html",
+  "fieldTypes": ["Object"]
+}

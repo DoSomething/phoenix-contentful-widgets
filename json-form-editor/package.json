@@ -1,0 +1,47 @@
+{
+  "name": "contentful-ui-extension-json-form-editor",
+  "version": "0.1.0",
+  "description": "A JSON form editor UI Extension widget for Contentful's Web App",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "extension:create": "better-npm-run extension:create",
+    "extension:update": "better-npm-run extension:update",
+    "export": "cp ./_build/index.html ./_build/temp.html && mv _build/temp.html ../docs/json-form-editor.html",
+    "start": "NODE_ENV=development webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "@dosomething/babel-config"
+    ]
+  },
+  "betterScripts": {
+    "extension:create": {
+      "command": "contentful-extension create --space-id $CONTENTFUL_SPACE_ID"
+    },
+    "extension:update": {
+      "command": "contentful-extension update --space-id $CONTENTFUL_SPACE_ID --force"
+    }
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@dosomething/babel-config": "^2.1.0",
+    "@dosomething/eslint-config": "^3.1.2",
+    "@dosomething/webpack-config": "^3.0.0",
+    "babel-eslint": "^8.2.2",
+    "ejs-loader": "^0.3.1",
+    "eslint-loader": "^2.0.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "webpack": "^3.10.0",
+    "webpack-validator": "^3.0.0"
+  },
+  "dependencies": {
+    "contentful-ui-extensions-sdk": "^3.3.0",
+    "json-editor": "^0.7.28",
+    "lodash.debounce": "^4.0.8"
+  }
+}
