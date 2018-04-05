@@ -1,32 +1,67 @@
 {
-  "title": "Questions",
-  "type": "array",
-  "items": {
-    "title": "Question",
-    "type": "object",
-    "properties": {
-      "title": {
-        "type": "string",
-        "title": "Title"
-      },
-      "choices": {
-        "title": "Choices",
-        "type": "array",
-        "items": {
-          "title": "Choice",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Title"
-            },
-            "results": {
-              "type": "array",
-              "format": "table",
-              "title": "Results",
-              "items": {
-                "title": "Result Id",
-                "type": "string"
+  "results": {
+    "title": "Results",
+    "type": "array",
+    "uniqueItems": true,
+    "id": "res",
+    "items": {
+      "options": {
+          "collapsed": true
+        },
+      "title": "Result",
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "title": "Content",
+          "format": "textarea",
+          "options": {
+            "input_height": "100px"
+          }
+        }
+      }
+    }
+  },
+  "questions": {
+    "title": "Questions",
+    "type": "array",
+    "items": {
+      "title": "Question",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "choices": {
+          "title": "Choices",
+          "type": "array",
+          "options": {
+            "collapsed": true
+          },
+          "items": {
+            "title": "Choice",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "results": {
+                "type": "array",
+                "format": "table",
+                "title": "Results",
+                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the number of the result!)",
+                "items": {
+                  "title": "result ID/s",
+                  "type": "string",
+                  "format": "number"
+                }
+              },
+              "resultBlock": {
+                "type": "string",
+                "title": "Result Block ID",
+                "description": "The ID of the Content Block to be rendered when the user finishes the quiz, if they select this choice."
               }
             }
           }
