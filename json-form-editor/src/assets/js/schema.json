@@ -29,7 +29,7 @@
     "title": "Questions",
     "type": "array",
     "options": {
-      "disable_array_delete_all_rows": true
+      "disable_array_reorder": false
     },
     "items": {
       "title": "Question",
@@ -45,6 +45,7 @@
           "options": {
             "collapsed": true
           },
+          "description": "The answer choices for this question",
           "items": {
             "headerTemplate": "Choice #{{i1}}",
             "type": "object",
@@ -57,7 +58,11 @@
                 "type": "array",
                 "format": "table",
                 "title": "Results",
-                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the ID of the result!)",
+                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the ID of the result in the 'Results' field!)",
+                "options": {
+                  "disable_array_delete_all_rows": true,
+                  "disable_array_reorder": true
+                },
                 "items": {
                   "title": "result ID",
                   "type": "string",
@@ -67,7 +72,7 @@
               "resultBlock": {
                 "type": "string",
                 "title": "Result Block ID",
-                "description": "The ID of the Content Block to be rendered when the user finishes the quiz, if they select this choice."
+                "description": "The Contentful ID of the Content Block to be rendered when the user finishes the quiz, if they select this choice."
               }
             }
           }
