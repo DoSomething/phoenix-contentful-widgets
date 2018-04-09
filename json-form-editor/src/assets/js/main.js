@@ -5,6 +5,8 @@ import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
 
 window.Handlebars = handlebars;
+
+// Transforms a numbered index to an upper-case alphabet character.
 window.Handlebars.registerHelper('transformIndex', function(index) {
   return String.fromCharCode(Number(index) + 65);
 });
