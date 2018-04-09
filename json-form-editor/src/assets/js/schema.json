@@ -81,6 +81,11 @@
                 "type": "string",
                 "title": "Result Block ID",
                 "description": "The Contentful ID of the Content Block to be rendered when the user finishes the quiz, if they select this choice."
+              },
+              "backgroundImage": {
+                "type": "string",
+                "title": "Background Image",
+                "description": "Optional background image for this choice"
               }
             }
           }
