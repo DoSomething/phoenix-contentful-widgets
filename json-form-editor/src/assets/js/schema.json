@@ -10,7 +10,7 @@
       "headerTemplate": "Result ID: {{#transformIndex i}}{{/transformIndex}}",
       "options": {
         "collapsed": true
-        },
+      },
       "type": "object",
       "properties": {
         "content": {
@@ -28,6 +28,7 @@
     "title": "Questions",
     "type": "array",
     "options": {
+      "disable_array_delete_all_rows": true,
       "disable_array_reorder": false
     },
     "items": {
@@ -36,7 +37,11 @@
       "properties": {
         "title": {
           "type": "string",
-          "title": "Title"
+          "title": "Title",
+          "format": "textarea",
+          "options": {
+            "input_height": "20px"
+          }
         },
         "choices": {
           "title": "Choices",
@@ -51,7 +56,11 @@
             "properties": {
               "title": {
                 "type": "string",
-                "title": "Title"
+                "title": "Title",
+                "format": "textarea",
+                  "options": {
+                  "input_height": "20px"
+                }
               },
               "results": {
                 "type": "array",
@@ -65,7 +74,7 @@
                 "items": {
                   "title": "result ID",
                   "type": "string",
-                  "pattern": "^[A-Z]{0,1}$"
+                  "pattern": "^[A-Z]$"
                 }
               },
               "resultBlock": {
