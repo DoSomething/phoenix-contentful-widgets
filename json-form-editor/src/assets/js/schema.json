@@ -2,7 +2,6 @@
   "results": {
     "title": "Results",
     "type": "array",
-    "id": "res",
     "options": {
       "disable_array_delete_all_rows": true,
       "disable_array_reorder": true
