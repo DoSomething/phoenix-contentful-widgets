@@ -23,14 +23,20 @@ module.exports = configure({
 
   resolve: {
     modules: [resolve('node_modules')],
+    alias: {
+       handlebars: 'handlebars/dist/handlebars.min.js'
+    },
   },
 
   plugins: [
         new HtmlWebpackPlugin({
-            title: 'CSS Editor',
+            title: 'JSON Form Editor',
             inlineSource: '.(js)$',
             template: 'ejs-loader!./src/index.ejs',
-            filename: 'index.html'
+            filename: 'index.html',
+            minify: {
+                minifyJS: true,
+            },
         }),
         new HtmlWebpackInlineSourcePlugin()
     ]

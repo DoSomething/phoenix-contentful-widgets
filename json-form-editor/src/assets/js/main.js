@@ -2,6 +2,14 @@
 import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
+import handlebars from 'handlebars';
+
+window.Handlebars = handlebars;
+
+// Transforms a numbered index to an upper-case alphabet character.
+window.Handlebars.registerHelper('transformIndex', function(index) {
+  return String.fromCharCode(Number(index) + 65);
+});
 
 // Reference to the extension API
 const contentfulExtension = window.contentfulExtension;
@@ -13,6 +21,7 @@ const contentfulExtension = window.contentfulExtension;
 contentfulExtension.init((extension) => {
   extension.window.startAutoResizer();
 
+  // Create and add the editor element to the DOM
   const editorElement = document.createElement('div');
   editorElement.classList.add('jfe-editor-root');
   document.body.appendChild(editorElement);
@@ -20,13 +29,13 @@ contentfulExtension.init((extension) => {
   const fieldId = extension.field.id;
 
   const editor = new window.JSONEditor(editorElement, {
-    schema: json,
+    schema: json[fieldId],
     no_additional_properties: true,
     required_by_default: true,
     startval: extension.field.getValue(),
-    disable_collapse: true,
     disable_properties: true,
     show_errors: 'always',
+    template: 'handlebars',
   });
 
   const validateAndSave = debounce(() => {
@@ -34,7 +43,6 @@ contentfulExtension.init((extension) => {
 
     if (errors.length === 0) {
       const currentJSON = editor.getValue();
-      console.log(currentJSON);
       extension.field.setValue(currentJSON);
     }
   }, 150);

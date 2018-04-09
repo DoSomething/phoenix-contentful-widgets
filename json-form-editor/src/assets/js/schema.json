@@ -1,32 +1,77 @@
 {
-  "title": "Questions",
-  "type": "array",
-  "items": {
-    "title": "Question",
-    "type": "object",
-    "properties": {
-      "title": {
-        "type": "string",
-        "title": "Title"
-      },
-      "choices": {
-        "title": "Choices",
-        "type": "array",
-        "items": {
-          "title": "Choice",
-          "type": "object",
-          "properties": {
-            "title": {
-              "type": "string",
-              "title": "Title"
-            },
-            "results": {
-              "type": "array",
-              "format": "table",
-              "title": "Results",
-              "items": {
-                "title": "Result Id",
-                "type": "string"
+  "results": {
+    "title": "Results",
+    "type": "array",
+    "options": {
+      "disable_array_delete_all_rows": true,
+      "disable_array_reorder": true
+    },
+    "items": {
+      "headerTemplate": "Result ID: {{#transformIndex i}}{{/transformIndex}}",
+      "options": {
+        "collapsed": true
+        },
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "title": "Content",
+          "format": "textarea",
+          "options": {
+            "input_height": "100px"
+          }
+        }
+      }
+    }
+  },
+  "questions": {
+    "title": "Questions",
+    "type": "array",
+    "options": {
+      "disable_array_reorder": false
+    },
+    "items": {
+      "title": "Question",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "choices": {
+          "title": "Choices",
+          "type": "array",
+          "options": {
+            "collapsed": true
+          },
+          "description": "The answer choices for this question",
+          "items": {
+            "headerTemplate": "Choice #{{i1}}",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "title": "Title"
+              },
+              "results": {
+                "type": "array",
+                "format": "table",
+                "title": "Results",
+                "description": "The IDs of the results to be awarded if this choice is selected (should correspond to the ID of the result in the 'Results' field!)",
+                "options": {
+                  "disable_array_delete_all_rows": true,
+                  "disable_array_reorder": true
+                },
+                "items": {
+                  "title": "result ID",
+                  "type": "string",
+                  "pattern": "^[A-Z]{0,1}$"
+                }
+              },
+              "resultBlock": {
+                "type": "string",
+                "title": "Result Block ID",
+                "description": "The Contentful ID of the Content Block to be rendered when the user finishes the quiz, if they select this choice."
               }
             }
           }
