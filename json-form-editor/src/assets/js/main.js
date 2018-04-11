@@ -29,7 +29,7 @@ contentfulExtension.init((extension) => {
   const fieldId = extension.field.id;
 
   if (! json[fieldId]) {
-    const errorElement = document.createElement('h3');
+    const errorElement = document.createElement('p');
     errorElement.innerText = 'Sorry, there is no schema set for this field in the JSON Form Editor extension!';
     return document.body.appendChild(errorElement);
   }
