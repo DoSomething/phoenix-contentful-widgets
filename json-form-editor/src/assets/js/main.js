@@ -28,6 +28,12 @@ contentfulExtension.init((extension) => {
 
   const fieldId = extension.field.id;
 
+  if (! json[fieldId]) {
+    const errorElement = document.createElement('p');
+    errorElement.innerText = 'Sorry, there is no schema set for this field in the JSON Form Editor extension!';
+    return document.body.appendChild(errorElement);
+  }
+
   const editor = new window.JSONEditor(editorElement, {
     schema: json[fieldId],
     no_additional_properties: true,
