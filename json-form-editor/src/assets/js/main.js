@@ -5,6 +5,9 @@ import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
 import './jsonEditorContentfulTheme';
 
+
+import '../scss/main.scss';
+
 window.Handlebars = handlebars;
 window.SimpleMDE = simpleMDE;
 
