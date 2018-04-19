@@ -1,5 +1,3 @@
-'use strict';
-
 JSONEditor.defaults.themes.contentful = (function (JSONEditor) {
 
   var PARENT = JSONEditor.AbstractTheme;

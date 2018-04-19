@@ -5,11 +5,9 @@ import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
 import './jsonEditorContentfulTheme';
 
-
 import '../scss/main.scss';
 
 window.Handlebars = handlebars;
-window.SimpleMDE = simpleMDE;
 
 // Transforms a numbered index to an upper-case alphabet character.
 window.Handlebars.registerHelper('transformIndex', function(index) {
