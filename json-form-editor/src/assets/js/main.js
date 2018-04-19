@@ -3,6 +3,9 @@ import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
+import './jsonEditorContentfulTheme';
+
+import '../scss/main.scss';
 
 window.Handlebars = handlebars;
 
@@ -35,6 +38,7 @@ contentfulExtension.init((extension) => {
   }
 
   const editor = new window.JSONEditor(editorElement, {
+    theme: 'contentful',
     schema: json[fieldId],
     no_additional_properties: true,
     required_by_default: true,

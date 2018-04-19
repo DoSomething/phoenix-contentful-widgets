@@ -31,7 +31,7 @@ module.exports = configure({
   plugins: [
         new HtmlWebpackPlugin({
             title: 'JSON Form Editor',
-            inlineSource: '.(js)$',
+            inlineSource: '.(js|css)$',
             template: 'ejs-loader!./src/index.ejs',
             filename: 'index.html',
             minify: {
