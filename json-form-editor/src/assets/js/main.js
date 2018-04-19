@@ -3,8 +3,10 @@ import 'json-editor';
 import json from './schema.json';
 import debounce from 'lodash.debounce';
 import handlebars from 'handlebars';
+import './jsonEditorContentfulTheme';
 
 window.Handlebars = handlebars;
+window.SimpleMDE = simpleMDE;
 
 // Transforms a numbered index to an upper-case alphabet character.
 window.Handlebars.registerHelper('transformIndex', function(index) {
@@ -35,6 +37,7 @@ contentfulExtension.init((extension) => {
   }
 
   const editor = new window.JSONEditor(editorElement, {
+    theme: 'contentful',
     schema: json[fieldId],
     no_additional_properties: true,
     required_by_default: true,
