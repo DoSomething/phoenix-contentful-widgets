@@ -40,7 +40,7 @@
           "title": "Title",
           "format": "textarea",
           "options": {
-            "input_height": "20px"
+            "input_height": "30px"
           }
         },
         "choices": {
@@ -59,7 +59,7 @@
                 "title": "Title",
                 "format": "textarea",
                   "options": {
-                  "input_height": "20px"
+                  "input_height": "30px"
                 }
               },
               "results": {
